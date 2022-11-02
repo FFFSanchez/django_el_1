@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }} -@- {{ block.super }}
+{% endblock %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock sidebar %}
+
+{% block content %}
+{% for item in object_list %}
+<div class="card mb-3">
+    <div class="card-header">
+        Категория: <a href="{{ item.category.get_absolute_url }}">{{ item.category }}</a>
+    </div>
+    <div class="card-body">
+        <div class="media">
+            {% if item.photo %}
+                <img src="{{ item.photo.url }}" align="left" alt="Jepa" width="350" class="mr-3" style="border: 15px solid #ffffff;">
+            {% else %}
+                <img src="https://picsum.photos/id/1084/536/354?grayscale&blur" alt="" class="mr-3">
+            {% endif %}
+            <div class="media-body">
+                <h5 class="card-title {% cycle 'text-danger' 'text-success' %}">{{ item.title }}</h5>
+                <p class="card-text">{{ item.content|linebreaks|truncatewords:150 }}</p>
+                <a href="{{ item.get_absolute_url }}" class="btn btn-primary">Read more...</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="card-footer text-muted">
+        {{ item.created_at|date:"Y-m-d H:i" }} <br>
+        {{ item.created_at|timesince }} прошло с момента публикации
+    </div>
+</div>
+{% empty %}
+    No such model :D
+{% endfor %}
+{% endblock content %}

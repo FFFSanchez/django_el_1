@@ -1,17 +1,21 @@
 # django_el_1
-django project with news list,
-two apps, 
-admin panel, 
-sqlite3 database,
-jinja,
-base.html blank 
-registration, 
-login, 
-pagination, 
-caching some views, 
-CKEDITOR in admin panel,
-email sender SMTP,
-captcha,
-debug toolbar,
-views controllers by defs and by classes
+
+- [X] django project with news list
+- [X] two apps
+- [X] admin panel
+- [X] sqlite3 database
+- [X] jinja
+- [X] base.html blank 
+- [X] registration
+- [X] login
+- [X] pagination
+- [X] caching some views
+- [X] CKEDITOR in admin panel
+- [X] email sender SMTP
+- [X] captcha
+- [X] debug toolbar
+- [X] views controllers by defs and by classes
+- [ ] deploy
+- [ ] use docker
+- [ ] integrate API 
 
